@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="login-body">
+    <div class="login-container">
+        <div class="login-form">
+            <h1>Software Tester/Developer</h1>
+            <h2>Sign in</h2>
+            <form id="loginForm">
+                <label for="username">Username</label>
+                <div class="input-container">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="username" placeholder="Enter your username" required>
+                </div>
+                <label for="password">Password</label>
+                <div class="input-container">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="password" placeholder="Enter your password" required>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+        <div class="login-image">
+            <img src="Login 3.png" alt="Blockchain Bug Tracking System">
+        </div>
+    </div>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            //hardcoded authentication (for demo purposes only)
+            if (username === 'Thomas' && password === 'Mwangi') {
+                localStorage.setItem('loggedIn', true);
+                window.location.href = 'index.html';
+            } else {
+                alert('Invalid credentials');
+            }
+        });
+    </script>
+</body>
+</html>

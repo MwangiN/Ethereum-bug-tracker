@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <nav>
+        <a href="pmindex.html">Home</a> |
+        <a href="pmbug_list.html">View Bug List</a> |
+        <button id="logoutButton" class="logout">Log Out</button>
+    </nav>
+   
+    <div class="row">
+        <div class="column">
+            <img src="ethereum.jpg" alt="Software Developer at Work" class="developer-image">
+        </div>
+        <div class="column1">
+            <h1><i class="bi bi-bug"></i> &nbsp;Blockchain Based Bug Tracker</h1>
+            <p>Welcome to decentralized bug tracking. </p>
+            <p>This system lets you track bugs that have been logged to an Ethereum blockchain running on Ganache by your team. You can check the logged bugs here:</p>
+            <button onclick="window.location.href='pmbug_list.html'">View Bugs</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('logoutButton').addEventListener('click', function() {
+            localStorage.removeItem('loggedIn');
+            window.location.href = 'welcome.html';
+        });
+    </script>
+</body>
+</html>

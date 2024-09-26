@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bug List</title>
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.5.0/dist/web3.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <nav>
+        <a href="pmindex.html">Home</a> |
+        <a href="pmbug_list.html">View Bug List</a> |
+        <button id="logoutButton" class="logout">Log Out</button>
+    </nav>
+    <h1><i class="bi bi-bug"></i> &nbsp; Blockchain Based Bug Tracker</h1>
+    <h2>Search Bugs</h2>
+    <input type="text" id="searchField" placeholder="Enter search term">
+    <button onclick="searchBugs()">Search</button>
+    <h2>Logged Bugs</h2>
+    <div class=".table-container">
+        <table id="bugTable">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Title</th>
+                <th>Application</th>
+                <th>Operating System</th>
+                <th>Severity</th>
+                <th>Description</th>
+                <th>Timestamp</th>
+            </tr>
+        </thead>
+        <tbody id="bugList"></tbody>
+        </table>
+    </div>
+    <script src="app.js"></script>
+    <script>
+        document.getElementById('logoutButton').addEventListener('click', function() {
+            localStorage.removeItem('loggedIn');
+            window.location.href = 'welcome.html';
+        });
+        loadBugs();  // Load the bugs when the page is loaded
+    </script>
+</body>
+</html>
